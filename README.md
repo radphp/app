@@ -1,0 +1,1 @@
+# RadPHP application skeleton
