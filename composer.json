@@ -1,5 +1,5 @@
 {
-    "name": "Radly/radphp-app",
+    "name": "radly/radphp-app",
     "description": "RadPHP application skeleton",
     "keywords": ["RadPHP", "RESTful", "app"],
     "type": "project",
@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": ">=5.5.21",
-        "Radly/radphp": "dev-master"
+        "radly/radphp": "dev-master"
     },
     "autoload": {
         "psr-4": {

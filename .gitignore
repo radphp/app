@@ -1,4 +1,4 @@
 vendor
 .idea
-tmp/*
-!tmp/empty
+app/tmp/*
+!app/tmp/empty
