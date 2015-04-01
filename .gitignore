@@ -2,3 +2,5 @@ vendor
 .idea
 app/tmp/*
 !app/tmp/empty
+composer.lock
+composer.phar
