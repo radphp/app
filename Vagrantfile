@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.define 'radphp', primary: true do |radphp|
         radphp.vm.synced_folder '.', "#{$project_dir}"
-        config.vm.provision "shell", path: "./bin/provision.sh"
+        radphp.vm.provision "shell", path: "./bin/provision.sh"
         radphp.vm.provider 'docker' do |d|
             d.name = "radphp-" + ENV['RAD_ENV']
             d.image = "radly/radphp-lepp"
