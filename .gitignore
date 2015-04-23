@@ -1,5 +1,8 @@
 vendor
+bundles/*
+!bundles/empty
 .idea
+.vagrant
 app/tmp/*
 !app/tmp/empty
 composer.lock
