@@ -3,12 +3,15 @@
 namespace App;
 
 use Rad\Config;
-use Rad\DependencyInjection\Injectable;
+use Rad\DependencyInjection\ContainerAware;
+use Rad\Event\EventDispatcher;
 
 /**
  * App Bootstrap
+ *
+ * @method EventDispatcher getEventService()
  */
-class Bootstrap extends Injectable
+class Bootstrap extends ContainerAware
 {
     /**
      * App\Bootstrap Constructor
@@ -17,5 +20,6 @@ class Bootstrap extends Injectable
     {
         Config::load(__DIR__ . '/Config/config.default.php');
         Config::load(__DIR__ . sprintf('/Config/config.%s.php', getenv('RAD_ENV')));
+        Config::set('env', getenv('RAD_ENV'));
     }
 }
