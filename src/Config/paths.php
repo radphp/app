@@ -14,8 +14,11 @@ define('APP_DIR', 'src');
 // Define app path
 define('APP', ROOT . DS . APP_DIR);
 
+// Define config directory name
+define('CONFIG_DIR', 'Config');
+
 // Define config path
-define('CONFIG', APP . DS . 'Config');
+define('CONFIG', APP . DS . CONFIG_DIR);
 
 // Define bundles directory name
 define('BUNDLES_DIR', 'bundles');
