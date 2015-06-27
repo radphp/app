@@ -4,6 +4,7 @@
     "keywords": ["RadPHP", "RESTful", "app"],
     "type": "project",
     "license": "MIT",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Mohammad Abdoli Rad",
