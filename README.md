@@ -14,7 +14,7 @@ A skeleton for creating applications based on [RadPHP framework](https://github.
 
 If Composer is installed globally, run
 ```bash
-composer create-project --prefer-dist radly/radphp-app [app_name]
+composer create-project -s dev --prefer-dist radly/radphp-app [app_name]
 ```
 
 ## Running
