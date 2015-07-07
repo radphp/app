@@ -9,7 +9,7 @@ A skeleton for creating applications based on [RadPHP framework](https://github.
 
 ## Installation
 
-1. Run `php composer.phar create-project --prefer-dist radly/radphp-app [app_name]`.
+1. Run `php composer.phar create-project -s dev --prefer-dist radly/radphp-app [app_name]`.
 2. Or run `git pull git@github.com:Radly/radphp-app.git [app-name]`
 
 If Composer is installed globally, run
