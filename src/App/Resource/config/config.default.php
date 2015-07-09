@@ -9,9 +9,7 @@ return [
     'bundles' => [
         'App' => [
             'namespace' => 'App\\',
-            'options' => [
-                'autoload' => true
-            ],
+            'options' => [],
         ]
     ]
 ];
