@@ -1,11 +1,6 @@
 # RadPHP application skeleton
 A skeleton for creating applications based on [RadPHP framework](https://github.com/Radly/radphp).
 
-## Requirements
-
-1. Web Server (Nginx/Apache/...) (pre-installed when running with [method #2](#with-vagrant-and-docker))
-2. PHP >= 5.5.21 (pre-installed when running with [method #2](#with-vagrant-and-docker))
-3. [Composer](http://getcomposer.org/doc/00-intro.m)  (pre-installed when running with [method #2](#with-vagrant-and-docker))
 
 ## Installation
 
