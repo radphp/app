@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo 'DROP DATABASE IF EXISTS radphp_db;' | sudo -u postgres psql
 echo "DROP ROLE IF EXISTS radphp_user;" | sudo -u postgres psql
