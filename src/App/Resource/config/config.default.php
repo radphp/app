@@ -7,9 +7,6 @@ return [
         'default' => 'en'
     ],
     'bundles' => [
-        'App' => [
-            'namespace' => 'App\\',
-            'options' => [],
-        ]
+        'App' => []
     ]
 ];
