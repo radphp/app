@@ -13,7 +13,7 @@ A skeleton for creating applications based on [RadPHP framework](https://github.
 6. Go to you container with `vagrant ssh`
 7. Change directory to you virtual gost root directory with `cd /srv/www`
 8. Execute `composer update`
-9. Then open http://127.0.0.1/example in your browser
+9. Then open http://127.0.0.1/ in your browser
 
 ### With your own installation of web server and PHP:
 1. First make sure you have [Composer](http://getcomposer.org/doc/00-intro.m)
