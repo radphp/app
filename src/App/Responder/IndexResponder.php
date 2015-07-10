@@ -3,11 +3,11 @@
 namespace App\Responder;
 
 /**
- * Example Responder
+ * Index Responder
  *
  * @package App\Responder
  */
-class ExampleResponder extends AppResponder
+class IndexResponder extends AppResponder
 {
     public function getMethod()
     {

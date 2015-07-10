@@ -3,11 +3,11 @@
 namespace App\Action;
 
 /**
- * Example Action
+ * Index Action
  *
  * @package App\Action
  */
-class ExampleAction extends AppAction
+class IndexAction extends AppAction
 {
     public function getMethod()
     {
