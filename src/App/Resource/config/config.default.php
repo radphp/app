@@ -7,13 +7,7 @@ return [
         'default' => 'en'
     ],
     'bundles' => [
-        'App' => [
-            'namespace' => 'App\\',
-            'options' => [],
-        ],
-        'Twig' => [
-            'namespace' => 'Twig\\',
-            'options' => [],
-        ]
+        'App' => [],
+        'Twig' => []
     ]
 ];
