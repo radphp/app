@@ -10,6 +10,10 @@ return [
         'App' => [
             'namespace' => 'App\\',
             'options' => [],
+        ],
+        'Twig' => [
+            'namespace' => 'Twig\\',
+            'options' => [],
         ]
     ]
 ];

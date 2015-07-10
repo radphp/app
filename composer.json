@@ -19,7 +19,8 @@
     ],
     "require": {
         "php": ">=5.5.21",
-        "radphp/radphp": "dev-master"
+        "radphp/radphp": "dev-master",
+        "radphp/twig-bundle": "dev-master"
     },
     "autoload": {
         "psr-4": {

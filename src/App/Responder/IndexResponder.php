@@ -11,8 +11,11 @@ class IndexResponder extends AppResponder
 {
     public function getMethod()
     {
-        $hello = 'Hello ' . $this->getData('name') . '!!';
+        $content = '';
+        foreach ($this->getData('examples') as $exampleName => $exampleRoute) {
+            $content .= '<a href="' . $exampleRoute . '">' . ucfirst($exampleName) . '</a>';
+        }
 
-        $this->response->setContent($hello);
+        $this->response->setContent($content);
     }
 }

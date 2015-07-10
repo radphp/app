@@ -1,0 +1,10 @@
+<html>
+<head>
+    <title>Hello</title>
+</head>
+<body>
+{% for name,route in examples %}
+    <a href="{{ route }}">{{ name|capitalize }}</a>
+{% endfor %}
+</body>
+</html>

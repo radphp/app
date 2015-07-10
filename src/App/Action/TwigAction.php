@@ -3,11 +3,11 @@
 namespace App\Action;
 
 /**
- * Index Action
+ * Twig Action
  *
  * @package App\Action
  */
-class IndexAction extends AppAction
+class TwigAction extends AppAction
 {
     public function getMethod()
     {
@@ -16,5 +16,6 @@ class IndexAction extends AppAction
         ];
 
         $this->getResponder()->setData('examples', $examples);
+        $this->getResponder()->setData('twig', $this->getContainer()->get('twig'));
     }
 }
