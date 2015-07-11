@@ -9,7 +9,7 @@ if (!defined('DS')) {
 define('ROOT_DIR', dirname(dirname(dirname(dirname(__DIR__)))));
 
 // Define bundles path
-define('SRC', ROOT_DIR . DS . 'src');
+define('SRC_DIR', ROOT_DIR . DS . 'src');
 
 // Define app path
 define('APP_DIR', dirname(dirname(__DIR__)));

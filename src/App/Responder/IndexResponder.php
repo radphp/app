@@ -18,7 +18,7 @@ class IndexResponder extends AppResponder
             $twig = $this->getContainer()->get('twig');
             $examples = $this->getData('examples');
 
-            $content = $twig->render('index.twig', ['examples' => $examples]);
+            $content = $twig->render('@App/index.twig', ['examples' => $examples]);
         }
 
         $this->response->setContent($content);
