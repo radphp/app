@@ -1,10 +1,36 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
+
+    <script>
+        angular.module('App', [])
+
+        .config(function($interpolateProvider) {
+            $interpolateProvider.startSymbol('##').endSymbol('##');
+        })
+
+        .value('URL', 'http://127.0.0.1/')
+
+        .controller('AppController', function($scope, $http, URL) {
+            $http.get(URL, {headers: {"X-Requested-With" : "XMLHttpRequest"}})
+                .success(function (response) {$scope.examples = response.examples;});
+        });
+    </script>
     <title>Hello</title>
 </head>
 <body>
-{% for name,route in examples %}
-    <a href="{{ route }}">{{ name|capitalize }}</a>
-{% endfor %}
+<div ng-app="App" ng-controller="AppController">
+
+<ul>
+    <li ng-repeat="example in examples">
+        <a href="## example.route ##">## example.name ##</a>
+    </li>
+</ul>
+
+</div>
+
 </body>
 </html>
