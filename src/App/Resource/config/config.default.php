@@ -9,6 +9,5 @@ return [
     'bundles' => [
         'App' => [],
         'Twig' => [],
-        'Asset' => [],
     ]
 ];
