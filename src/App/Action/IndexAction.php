@@ -13,7 +13,7 @@ class IndexAction extends AppAction
     {
         if ($this->getRequest()->isAjax()) {
             $examples = [
-                ['name' => 'twig', 'route' => $this->getRouter()->generateUrl(['app', 'twig'])],
+                ['name' => 'Pages', 'route' => $this->getRouter()->generateUrl(['pages', 'index']) . '#/pages/About'],
             ];
 
             $this->getResponder()->setData('examples', $examples);
