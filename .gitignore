@@ -1,8 +1,6 @@
-var/tmp/*
+var/*
 !var/tmp/empty
-var/cache/*
 !var/cache/empty
-var/log/*
 !var/log/empty
 src/*
 !src/App
