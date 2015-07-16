@@ -6,7 +6,7 @@ A skeleton for creating applications based on [RadPHP framework](https://github.
 
 ### With [Vagrant](http://docs.vagrantup.com/v2/installation/) and [Docker](https://docs.docker.com/installation/) (Recommended):
 1. First make sure you have [Vagrant](http://docs.vagrantup.com/v2/installation/) and [Docker](https://docs.docker.com/installation/)
-2. Execute `git pull git@github.com:radphp/radphp-app.git [app-name]`
+2. Execute `git clone git@github.com:radphp/radphp-app.git [app-name]`
 3. Change directory to `[app-name]`
 4. Make sure you don't have web server running ([If you need help!](http://unix.stackexchange.com/a/139019/7099))
 5. Just run `vagrant up`
