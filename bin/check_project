@@ -1,0 +1,52 @@
+#!/usr/bin/bash
+
+currentDir=`pwd`
+scriptDir=`dirname $currentDir/$0`
+baseDirs=( "./src/*" "./vendor/radphp/*" ".")
+
+cd ${scriptDir}/..
+
+for baseDir in "${baseDirs[@]}"
+do
+	for dir in $(echo $baseDir)
+	do
+	    if [ "$dir" == "./src/App" ]; then
+	        continue
+	    fi
+
+		cd $dir
+
+		# check if it is a git repo/submodule or not!
+		res=`git status | grep 'Not a git repository'`
+		if [ -z "$res" ]; then
+			git remote update origin > /dev/null 2>&1
+			# check if there are uncommited changes!
+			res=`git status --short`
+			if [ ! -z "$res" ]; then
+			    echo -n "$dir... "
+				printf "\n"
+				echo -e '\E[31m'"\033[1m$dir has some uncommited changes, changed files are:\033[0m"
+				git status --short
+			fi
+			
+			pushdiff=`git rev-list origin/master..HEAD | wc -l`
+			if [ $pushdiff -gt 0 ]; then
+			    echo -n "$dir... "
+			    printf "\n"
+			    echo -e '\E[31m'"\033[1m$dir is $pushdiff commit ahead of its origin remote.\033[0m"
+			fi
+			
+			# if it is a submodule!
+			# else if it is a normal git repo!
+			if [ -f ".git" ]; then
+				dotGitDir=`cat .git | cut -d " " -f 2`
+			elif [ -d ".git" ]; then
+				dotGitDir=".git/"
+			fi
+			
+			cd ${scriptDir}/..
+		fi
+	done
+done
+
+cd $currentDir
