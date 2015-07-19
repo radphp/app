@@ -8,5 +8,6 @@ return [
     ],
     'bundles' => [
         'App' => [],
+        'Asset' => [],
     ]
 ];
