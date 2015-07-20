@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>RadPHP, a rapid RESTful application development PHP framework</title>
+
+    <style type="text/css" media="all">
+        @import url(http://fonts.googleapis.com/css?family=Cinzel:700);
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 150px 0 0;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            height: 100vh;
+            background: url("/App/img/bg.png") repeat;
+            color: #333;
+            font-size: 30px;
+            font-family: 'Cinzel', serif;
+        }
+
+        #logo {
+            filter: drop-shadow(0 0 40px #888);
+        }
+
+        #description {
+            margin-top: 120px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 20px;
+        }
+
+        a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body id="body">
+<div id="logo">
+    <img src="/App/img/logo.png">
+</div>
+
+<div id="description">
+    One of the fastest PHP frameworks out there.<br/>
+    We proudly respect: ADR, REST, PSR, SEO and AngularJS<br/>
+</div>
+
+<footer>
+    <a href="http://radphp.org">website</a> | <a href="https://github.com/radphp">source</a>
+</footer>
+
+<!-- github ribbon -->
+<a href="https://github.com/radphp"><img style="position: absolute; top: 0; left: 0; border: 0;"
+                                         src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67"
+                                         alt="Fork me on GitHub"
+                                         data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
+
+<script type="text/javascript" language="javascript" charset="utf-8">
+    var logo;
+    var delta = 40;
+    init();
+
+    function init() {
+        logo = document.getElementById('logo');
+        document.getElementById('body').onmousemove = onMouseMove;
+    }
+
+    function onMouseMove(e) {
+        var w = window.innerWidth / 2;
+        var h = window.innerHeight / 2;
+        var xm = (e.clientX - w) * delta / w;
+        var ym = (e.clientY - h) * delta / h;
+
+        logo.style.filter = 'drop-shadow(' + xm + 'px ' + ym + 'px 40px #888)';
+    }
+</script>
+
+</body>
+</html>
