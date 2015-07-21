@@ -8,6 +8,6 @@ return [
     ],
     'bundles' => [
         'App' => [],
-        'Asset' => [],
+        'Asset' => []
     ]
 ];

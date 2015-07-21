@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
+
+    <script>
+        angular.module('App', [])
+
+        .config(function($interpolateProvider) {
+            $interpolateProvider.startSymbol('##').endSymbol('##');
+        })
+
+        .value('URL', '{{ generateUrl() }}');
+    </script>
+
+    <script src="http://127.0.0.1/App/js/angular/AppController.js"></script>
+
+    <title>Hello</title>
+</head>
+<body>
+<div ng-app="App" ng-controller="AppController">
+
+<ul>
+    <li ng-repeat="example in examples">
+        <a href="## example.route ##">## example.name ##</a>
+    </li>
+</ul>
+
+</div>
+
+</body>
+</html>
