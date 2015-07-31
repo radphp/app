@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Rad\Config;
 use Rad\Core\Bundle;
 use Rad\Routing\Middleware\DispatcherMiddleware;
 use Rad\Routing\Middleware\RouterMiddleware;
