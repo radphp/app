@@ -4,6 +4,7 @@ var/*
 !var/log/empty
 src/*
 !src/App
+!src/Application.php
 
 vendor
 .idea
