@@ -20,6 +20,7 @@ class Application extends AbstractApplication
         Config::load(CONFIG_DIR . DS . sprintf('config.%s.php', getenv('RAD_ENVIRONMENT')));
 
         Config::set('environment', getenv('RAD_ENVIRONMENT'));
+        Config::set('debug', getenv('RAD_DEBUG'));
     }
 
     /**
