@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    {{ getCss() }}
+
+    <title>{{ title }}</title>
+</head>
+<body>
+{% for type, messages in getService('flash').getAll() %}
+    {% for message in messages %}
+        <div class="alert alert-{{ type }}" role="alert">
+            {{ message|raw }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+{% block content %}{% endblock %}
+
+<footer class="text-center">
+    <p>Proudly developed by <a href="http://radphp.org">RadPHP</a> framework.</p>
+</footer>
+
+{{ getJs() }}
+</body>
+</html>
