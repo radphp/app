@@ -22,3 +22,7 @@ A skeleton for creating applications based on [RadPHP framework](https://github.
 4. Create a virtual host config file in your web server and point it's root directory to `web` directory of `[app_name]`
 5. Add your defined SERVERNAME in front of 127.0.0.1 line in your /etc/hosts
 6. Then open http://SERVERNAME/ in your browser
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/radphp/radphp-app/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
