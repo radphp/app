@@ -5,9 +5,5 @@ return [
     'languages' => [
         'possible' => ['en'],
         'default' => 'en'
-    ],
-    'bundles' => [
-        'App' => [],
-        'Asset' => []
     ]
 ];
