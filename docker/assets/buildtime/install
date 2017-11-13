@@ -1,0 +1,42 @@
+#!/usr/bin/env ash
+set -eux
+
+adduser -D -h ${RADPHP_HOME} ${RADPHP_USER}
+su-exec ${RADPHP_USER} mkdir -p ${RADPHP_INSTALL_DIR}
+
+usermod -aG ${RADPHP_GROUP} nginx
+
+sed -i -e "s/user = .*/user = $RADPHP_USER/g" \
+    -e "s/group = .*/group = $RADPHP_GROUP/g" \
+    -e "s#listen = .*#listen = /var/run/php5-fpm-radphp.sock#g" \
+    -e "s/;listen.owner = .*/listen.owner = $RADPHP_USER/g" \
+    -e "s/;listen.group = .*/listen.group = $RADPHP_GROUP/g" \
+    /etc/php7/php-fpm.d/www.conf
+
+sed -i -e "s#;error_log = .*#error_log = /proc/self/fd/2#g" \
+    -e "s#;access.log = .*#access.log = /proc/self/fd/2#g" \
+    /etc/php7/php-fpm.conf
+
+sed -i -e "s/;date.timezone =.*/date.timezone = UTC/g" \
+    -e "s/;always_populate_raw_post_data = -1/always_populate_raw_post_data = -1/g" \
+    -e "s/upload_max_filesize = .*/upload_max_filesize = 100M/g" \
+    -e "s/post_max_size = .*/post_max_size = 128M/g" \
+    /etc/php7/php.ini
+
+cp ${RADPHP_BUILDTIME_DIR}/configs/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Install composer
+EXPECTED_SIGNATURE=$(wget https://composer.github.io/installer.sig -O - -q)
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+ACTUAL_SIGNATURE=$(php -r "echo hash_file('SHA384', 'composer-setup.php');")
+
+if [[ "$EXPECTED_SIGNATURE" = "$ACTUAL_SIGNATURE" ]]; then
+    php composer-setup.php --filename=composer --install-dir=/usr/bin --quiet
+    RESULT=$?
+    rm composer-setup.php
+    exit ${RESULT}
+else
+    >&2 echo 'ERROR: Invalid installer signature'
+    rm composer-setup.php
+    exit 1
+fi
