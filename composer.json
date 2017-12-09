@@ -19,8 +19,8 @@
     ],
     "require": {
         "php": ">=5.5.21",
-        "radphp/radphp": "dev-master",
-        "radphp/asset-bundle": "dev-master"
+        "radphp/radphp": "0.1.x-dev",
+        "radphp/asset-bundle": "0.1.x-dev"
     },
     "autoload": {
         "psr-4": {

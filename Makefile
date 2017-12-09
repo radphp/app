@@ -1,14 +1,5 @@
-PRODUCTION=
-COMPOSE_FILES=docker-compose.yml
-
 RADPHP_USER=radphp
 RADPHP_GROUP=radphp
-
-ifdef PRODUCTION
-	COMPOSE_FILES+=-f docker-compose.production.yml
-else
-	COMPOSE_FILES+=-f docker-compose.development.yml
-endif
 
 help:
 	@echo '    ____            ______  __  ______     ___              '
@@ -42,19 +33,19 @@ help:
 	@echo ""
 
 up:
-	docker-compose -f $(COMPOSE_FILES) up -d
+	docker-compose up -d
 
 update:
-	docker-compose -f $(COMPOSE_FILES) exec -T --user=$(RADPHP_USER) web composer --working-dir '$RADPHP_INSTALL_DIR' update --optimize-autoloader
+	docker-compose exec -T --user=$(RADPHP_USER) web composer --working-dir '$RADPHP_INSTALL_DIR' update --optimize-autoloader
 
 status:
-	docker-compose -f $(COMPOSE_FILES) ps
+	docker-compose ps
 
 destroy:
-	docker-compose -f $(COMPOSE_FILES) down
+	docker-compose down
 
 shell:
-	docker-compose -f $(COMPOSE_FILES) exec --user=$(RADPHP_USER) web ash
+	docker-compose exec --user=$(RADPHP_USER) web ash
 
 shell-as-root:
-	docker-compose -f $(COMPOSE_FILES) exec web ash
+	docker-compose exec web ash

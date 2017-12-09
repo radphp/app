@@ -4,3 +4,11 @@ services:
   web:
     image: radphp/app:latest
     domainname: radphp.org
+    hostname: dev
+    volumes:
+      - ./:/var/lib/radphp/app
+      - ~/.composer:/var/lib/radphp/.composer
+    ports:
+    - "80:80"
+    env_file:
+    - ./.env
